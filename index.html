@@ -12,130 +12,165 @@
     --green:#159a55; --red:#e13b3b; --amber:#c07d08; --blue:#2b7fd4;
   }
   *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
-  body{margin:0; background:var(--bg); color:var(--txt);
-    font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    padding:14px 12px 40px; max-width:640px; margin:0 auto}
-  .top{display:flex; align-items:baseline; justify-content:space-between; margin:2px 4px 14px}
-  .top h1{font-size:18px; margin:0; font-weight:700}
-  .top .upd{font-size:12px; color:var(--dim)}
+  html,body{margin:0; background:var(--bg); color:var(--txt);
+    font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  body{max-width:660px; margin:0 auto; padding:12px 0 34px}
+  .top{display:flex; align-items:baseline; justify-content:space-between; padding:2px 14px 10px}
+  .top h1{font-size:17px; margin:0; font-weight:800}
+  .top .upd{font-size:11.5px; color:var(--dim)}
+
+  /* верхняя лента-ползунок с токенами (скроллится ОТДЕЛЬНО от карточек) */
+  .chips{display:flex; gap:8px; overflow-x:auto; padding:2px 14px 12px; scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto; padding:7px 15px; border-radius:999px; font-weight:800; font-size:14px;
+    border:1.6px solid transparent; background:var(--card2); cursor:pointer; white-space:nowrap;
+    transition:transform .12s, background .15s; user-select:none}
+  .chip:active{transform:scale(.95)}
+  .chip.short{color:var(--red); border-color:rgba(225,59,59,.35)}
+  .chip.long{color:var(--green); border-color:rgba(21,154,85,.35)}
+  .chip.active.short{background:var(--red); color:#fff; border-color:var(--red)}
+  .chip.active.long{background:var(--green); color:#fff; border-color:var(--green)}
+  .chip small{opacity:.75; font-weight:700; margin-left:5px}
+
+  /* карусель карточек: свайп влево-вправо, одна монета на экран */
+  .carousel{display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none}
+  .carousel::-webkit-scrollbar{display:none}
+  .slide{flex:0 0 100%; scroll-snap-align:center; padding:0 14px}
+
   .card{background:var(--card); border:1px solid var(--line); border-radius:16px;
-    padding:14px 14px 12px; margin-bottom:14px; box-shadow:0 1px 6px rgba(20,30,50,.07)}
+    padding:15px 15px 13px; box-shadow:0 1px 6px rgba(20,30,50,.07)}
   .head{display:flex; align-items:center; gap:10px; margin-bottom:10px}
-  .coin{font-size:19px; font-weight:800; letter-spacing:.3px}
+  .coin{font-size:21px; font-weight:800; letter-spacing:.3px}
   .side{font-size:12px; color:var(--dim); font-weight:600}
   .badge{margin-left:auto; font-size:12.5px; font-weight:800; padding:5px 11px; border-radius:999px;
     text-transform:uppercase; letter-spacing:.4px; white-space:nowrap}
-  .b-hold{background:rgba(46,204,113,.16); color:var(--green)}
-  .b-exit{background:rgba(255,82,82,.16); color:var(--red)}
-  .b-warn{background:rgba(255,176,32,.16); color:var(--amber)}
-  .b-add{background:rgba(58,160,255,.16); color:var(--blue)}
-  .conf{font-size:11px; color:var(--dim); margin-left:6px; font-weight:600}
+  .b-hold{background:rgba(21,154,85,.14); color:var(--green)}
+  .b-exit{background:rgba(225,59,59,.14); color:var(--red)}
+  .b-warn{background:rgba(192,125,8,.16); color:var(--amber)}
+  .b-add{background:rgba(43,127,212,.14); color:var(--blue)}
+  .conf{font-size:11px; opacity:.8; margin-left:6px; font-weight:700}
   .price{font-size:13.5px; color:var(--dim); margin:0 0 12px 2px}
-  .price b{color:var(--txt)}
   .sec-t{font-size:11px; text-transform:uppercase; letter-spacing:.6px; color:var(--dim);
-    margin:12px 2px 6px; font-weight:700}
-  .changed{background:var(--card2); border-radius:10px; padding:9px 11px; font-size:13.5px; color:#cfd6df}
+    margin:13px 2px 6px; font-weight:700}
+  .changed{background:var(--card2); border-radius:10px; padding:9px 11px; font-size:13.5px; color:#39424e}
   .row{display:flex; gap:9px; align-items:flex-start; padding:7px 2px; border-top:1px solid var(--line); font-size:14px}
   .row:first-of-type{border-top:none}
   .ic{flex:0 0 auto; font-size:15px; line-height:1.4}
-  .lv{display:flex; gap:14px; margin-top:12px; padding-top:11px; border-top:1px solid var(--line)}
-  .lv div{font-size:13.5px}
+  .lv{display:flex; gap:22px; margin-top:13px; padding-top:11px; border-top:1px solid var(--line)}
   .lv .k{color:var(--dim); font-size:11px; text-transform:uppercase; letter-spacing:.5px; display:block; margin-bottom:2px}
-  .lv .stop b{color:var(--red)} .lv .tgt b{color:var(--green)}
-  .empty{text-align:center; color:var(--dim); padding:50px 20px}
-  .foot{text-align:center; color:var(--dim); font-size:11.5px; margin-top:18px}
+  .lv .stop b{color:var(--red); font-size:15px} .lv .tgt b{color:var(--green); font-size:15px}
+  .waiting{color:var(--dim); font-size:14px; padding:8px 2px}
+  .empty{text-align:center; color:var(--dim); padding:50px 24px}
+  .foot{text-align:center; color:var(--dim); font-size:11.5px; margin-top:16px; padding:0 20px}
   .err{background:rgba(225,59,59,.08); border:1px solid rgba(225,59,59,.28); color:#b32020;
-    border-radius:12px; padding:12px; font-size:13px}
+    border-radius:12px; padding:12px; font-size:13px; margin:0 14px}
 </style>
 </head>
 <body>
   <div class="top"><h1>🤑 Блокнот позиций</h1><span class="upd" id="upd"></span></div>
-  <div id="app"><div class="empty">Загружаю…</div></div>
+  <div class="chips" id="chips"></div>
+  <div class="carousel" id="carousel"><div class="empty">Загружаю…</div></div>
   <div class="foot" id="foot"></div>
 
 <script>
-// апка всегда светлая, тему Telegram НЕ подхватываем (по просьбе оператора)
 try{ const tg=window.Telegram?.WebApp; if(tg){ tg.ready(); tg.expand();
   if(tg.setBackgroundColor) tg.setBackgroundColor('#f4f6f9');
   if(tg.setHeaderColor) tg.setHeaderColor('#f4f6f9'); } }catch(e){}
 
 const esc=s=>(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 
-function badgeClass(action){
-  const a=(action||'').toUpperCase();
-  if(a.includes('ВЫХОД')) return 'b-exit';
-  if(a.includes('ДЕРЖ')) return 'b-hold';
-  if(a.includes('ДОБАВ')) return 'b-add';
-  if(a.includes('ФИКС')||a.includes('СТОП')) return 'b-warn';
-  return 'b-hold';
-}
+function badgeClass(a){a=(a||'').toUpperCase();
+  if(a.includes('ВЫХОД'))return'b-exit'; if(a.includes('ДЕРЖ'))return'b-hold';
+  if(a.includes('ДОБАВ'))return'b-add'; if(a.includes('ФИКС')||a.includes('СТОП'))return'b-warn';
+  return'b-hold';}
 
-// разбор текста Claude в поля (формат из POSITION_PROMPT); всё best-effort, ломаться не должно
 function parse(text){
-  const t=(text||'').replace(/\r/g,''); const lines=t.split('\n');
-  const o={action:'',conf:'',header:'',price:'',changed:'',items:[],stop:'',target:''};
+  const lines=(text||'').replace(/\r/g,'').split('\n');
+  const o={action:'',conf:'',header:'',changed:'',items:[],stop:'',target:''};
   let sec='';
-  for(let raw of lines){
-    const l=raw.trim(); if(!l) continue;
-    let m;
-    if(m=l.match(/ДЕЙСТВИЕ:\s*(.+?)(?:·|\|| уверенность| увер)/i)){ o.action=m[1].trim();
-      const c=l.match(/уверенност[ьи]?\s*([1-5])/i); if(c)o.conf=c[1]; continue; }
-    if(l.startsWith('🟠')){ o.header=l.replace(/^🟠\s*/,''); continue; }
-    if(/^измен/i.test(l)){ sec='changed'; continue; }
-    if(/^слежу/i.test(l)){ sec='items'; continue; }
+  for(let raw of lines){ const l=raw.trim(); if(!l) continue; let m;
+    if(m=l.match(/ДЕЙСТВИЕ:\s*(.+?)(?:·|\|| уверенн| увер)/i)){o.action=m[1].trim();
+      const c=l.match(/уверенност[ьи]?\s*([1-5])/i); if(c)o.conf=c[1]; continue;}
+    if(l.startsWith('🟠')){o.header=l.replace(/^🟠\s*/,''); continue;}
+    if(/^измен/i.test(l)){sec='changed'; continue;}
+    if(/^слежу/i.test(l)){sec='items'; continue;}
     if(/^(стоп|цель)/i.test(l)){
       const st=l.match(/стоп[^0-9]*([0-9][0-9.,\-–\s]*)/i); if(st)o.stop=st[1].trim().replace(/[·|].*$/,'').trim();
-      const tg=l.match(/цель[^0-9]*([0-9][0-9.,\-–\s]*)/i); if(tg)o.target=tg[1].trim();
-      sec=''; continue;
-    }
+      const t=l.match(/цель[^0-9]*([0-9][0-9.,\-–\s]*)/i); if(t)o.target=t[1].trim(); sec=''; continue;}
     if(/^[✅⚠️🔴❓•\-]/.test(l)){
       const ic=(l.match(/^(\p{Emoji_Presentation}|\p{Emoji})/u)||[])[0]||'•';
       const txt=l.replace(/^([✅⚠️🔴❓•\-]️?)\s*/u,'').trim();
-      if(sec==='items') o.items.push({ic,txt});
-      else if(sec==='changed') o.changed+=(o.changed?' ':'')+txt;
-      continue;
-    }
-    if(sec==='changed'){ o.changed+=(o.changed?' ':'')+l; }
+      if(sec==='items')o.items.push({ic,txt});
+      else if(sec==='changed')o.changed+=(o.changed?' ':'')+txt; continue;}
+    if(sec==='changed')o.changed+=(o.changed?' ':'')+l;
   }
   return o;
 }
 
-function card(p){
-  const o=parse(p.text);
+function cardHTML(p){
   const sideRu=p.side==='long'?'лонг':'шорт';
+  const notReady=!p.text || /разбор ещё не собран/i.test(p.text);
+  if(notReady){
+    return `<div class="card"><div class="head"><span class="coin">${esc(p.coin)}</span>
+      <span class="side">${sideRu} · вход ${esc(String(p.entry))}</span></div>
+      <div class="waiting">Разбор считается, обновится автоматически…</div></div>`;
+  }
+  const o=parse(p.text);
   const items=o.items.map(it=>`<div class="row"><span class="ic">${esc(it.ic)}</span><span>${esc(it.txt)}</span></div>`).join('');
-  const lv=(o.stop||o.target)?`<div class="lv">
-      ${o.stop?`<div class="stop"><span class="k">стоп</span><b>${esc(o.stop)}</b></div>`:''}
-      ${o.target?`<div class="tgt"><span class="k">цель</span><b>${esc(o.target)}</b></div>`:''}
-    </div>`:'';
-  // если разобрать не удалось (нет действия) — показываем сырой текст, чтобы не терять данные
   if(!o.action && !items){
     return `<div class="card"><div class="head"><span class="coin">${esc(p.coin)}</span>
       <span class="side">${sideRu} от ${esc(String(p.entry))}</span></div>
       <div class="changed" style="white-space:pre-wrap">${esc(p.text)}</div></div>`;
   }
+  const lv=(o.stop||o.target)?`<div class="lv">
+      ${o.stop?`<div class="stop"><span class="k">стоп</span><b>${esc(o.stop)}</b></div>`:''}
+      ${o.target?`<div class="tgt"><span class="k">цель</span><b>${esc(o.target)}</b></div>`:''}</div>`:'';
   return `<div class="card">
-    <div class="head">
-      <span class="coin">${esc(p.coin)}</span>
+    <div class="head"><span class="coin">${esc(p.coin)}</span>
       <span class="side">${sideRu} · вход ${esc(String(p.entry))}</span>
-      <span class="badge ${badgeClass(o.action)}">${esc(o.action||'—')}${o.conf?`<span class="conf">${o.conf}/5</span>`:''}</span>
-    </div>
+      <span class="badge ${badgeClass(o.action)}">${esc(o.action||'—')}${o.conf?`<span class="conf">${o.conf}/5</span>`:''}</span></div>
     ${o.header?`<div class="price">${esc(o.header)}</div>`:''}
     ${o.changed?`<div class="sec-t">изменилось</div><div class="changed">${esc(o.changed)}</div>`:''}
     ${items?`<div class="sec-t">слежу</div>${items}`:''}
-    ${lv}
-  </div>`;
+    ${lv}</div>`;
+}
+
+let slideW=0, active=0, POS=[];
+const carousel=document.getElementById('carousel'), chipsBox=document.getElementById('chips');
+
+function setActive(i, fromChip){
+  if(i<0||i>=POS.length) return;
+  active=i;
+  [...chipsBox.children].forEach((c,idx)=>c.classList.toggle('active', idx===i));
+  // активный чип подводим в зону видимости (следуем за карточкой)
+  const chip=chipsBox.children[i]; if(chip) chip.scrollIntoView({inline:'center', block:'nearest', behavior:'smooth'});
 }
 
 fetch('data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
   document.getElementById('upd').textContent='обновлено '+(d.updated||'');
-  const app=document.getElementById('app');
-  if(!d.positions||!d.positions.length){ app.innerHTML='<div class="empty">Открытых позиций нет.<br>Скажи боту «вошёл в …», и они появятся здесь.</div>'; return; }
-  app.innerHTML=d.positions.map(card).join('');
-  document.getElementById('foot').textContent='Данные обновляются раз в 4 часа. Цену смотри в биржевом приложении — здесь вердикт: что делать.';
+  POS=d.positions||[];
+  if(!POS.length){ carousel.innerHTML='<div class="empty">Открытых позиций нет.<br>Скажи боту «вошёл в …».</div>'; return; }
+  // чипы
+  chipsBox.innerHTML=POS.map((p,i)=>`<div class="chip ${p.side==='long'?'long':'short'}" data-i="${i}">${esc(p.coin)}<small>${p.side==='long'?'лонг':'шорт'}</small></div>`).join('');
+  // слайды
+  carousel.innerHTML=POS.map(p=>`<div class="slide">${cardHTML(p)}</div>`).join('');
+  slideW=carousel.clientWidth;
+  document.getElementById('foot').textContent='Данные обновляются раз в час. Свайпай карточки, вверху выбирай монету. Цену смотри на бирже — тут вердикт.';
+  // клик по чипу — переносим карусель на эту монету (контекст меняется ТОЛЬКО по нажатию)
+  [...chipsBox.children].forEach(chip=>chip.addEventListener('click',()=>{
+    const i=+chip.dataset.i; carousel.scrollTo({left:i*slideW, behavior:'smooth'}); setActive(i,true);
+  }));
+  // свайп карусели — двигаем и подсветку чипа
+  let tmr; carousel.addEventListener('scroll',()=>{
+    clearTimeout(tmr); tmr=setTimeout(()=>{ const i=Math.round(carousel.scrollLeft/slideW); if(i!==active) setActive(i,false); },60);
+  });
+  setActive(0,false);
 }).catch(e=>{
-  document.getElementById('app').innerHTML='<div class="err">Не удалось загрузить данные (data.json). Если репозиторий только создан — подожди первый прогон крона.</div>';
+  carousel.innerHTML='<div class="err">Не удалось загрузить данные. Если репозиторий только создан — подожди первый прогон.</div>';
 });
+
+window.addEventListener('resize',()=>{ const old=active; slideW=carousel.clientWidth; carousel.scrollLeft=old*slideW; });
 </script>
 </body>
 </html>
