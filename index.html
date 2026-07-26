@@ -7,9 +7,9 @@
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
   :root{
-    --bg:#0e1116; --card:#171b22; --card2:#1e232c; --line:#262c37;
-    --txt:#e8ecf1; --dim:#8b95a3; --accent:#f0a020;
-    --green:#2ecc71; --red:#ff5252; --amber:#ffb020; --blue:#3aa0ff;
+    --bg:#f4f6f9; --card:#ffffff; --card2:#eef1f5; --line:#e4e8ee;
+    --txt:#1a1f27; --dim:#6b7480; --accent:#d98a0c;
+    --green:#159a55; --red:#e13b3b; --amber:#c07d08; --blue:#2b7fd4;
   }
   *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
   body{margin:0; background:var(--bg); color:var(--txt);
@@ -19,7 +19,7 @@
   .top h1{font-size:18px; margin:0; font-weight:700}
   .top .upd{font-size:12px; color:var(--dim)}
   .card{background:var(--card); border:1px solid var(--line); border-radius:16px;
-    padding:14px 14px 12px; margin-bottom:14px; box-shadow:0 2px 10px rgba(0,0,0,.25)}
+    padding:14px 14px 12px; margin-bottom:14px; box-shadow:0 1px 6px rgba(20,30,50,.07)}
   .head{display:flex; align-items:center; gap:10px; margin-bottom:10px}
   .coin{font-size:19px; font-weight:800; letter-spacing:.3px}
   .side{font-size:12px; color:var(--dim); font-weight:600}
@@ -44,7 +44,7 @@
   .lv .stop b{color:var(--red)} .lv .tgt b{color:var(--green)}
   .empty{text-align:center; color:var(--dim); padding:50px 20px}
   .foot{text-align:center; color:var(--dim); font-size:11.5px; margin-top:18px}
-  .err{background:rgba(255,82,82,.1); border:1px solid rgba(255,82,82,.3); color:#ffb3b3;
+  .err{background:rgba(225,59,59,.08); border:1px solid rgba(225,59,59,.28); color:#b32020;
     border-radius:12px; padding:12px; font-size:13px}
 </style>
 </head>
@@ -54,8 +54,10 @@
   <div class="foot" id="foot"></div>
 
 <script>
+// апка всегда светлая, тему Telegram НЕ подхватываем (по просьбе оператора)
 try{ const tg=window.Telegram?.WebApp; if(tg){ tg.ready(); tg.expand();
-  document.documentElement.style.setProperty('--bg', tg.themeParams.bg_color||'#0e1116'); } }catch(e){}
+  if(tg.setBackgroundColor) tg.setBackgroundColor('#f4f6f9');
+  if(tg.setHeaderColor) tg.setHeaderColor('#f4f6f9'); } }catch(e){}
 
 const esc=s=>(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 
