@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Блокнот позиций</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  :root{
+    --bg:#0e1116; --card:#171b22; --card2:#1e232c; --line:#262c37;
+    --txt:#e8ecf1; --dim:#8b95a3; --accent:#f0a020;
+    --green:#2ecc71; --red:#ff5252; --amber:#ffb020; --blue:#3aa0ff;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+  body{margin:0; background:var(--bg); color:var(--txt);
+    font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    padding:14px 12px 40px; max-width:640px; margin:0 auto}
+  .top{display:flex; align-items:baseline; justify-content:space-between; margin:2px 4px 14px}
+  .top h1{font-size:18px; margin:0; font-weight:700}
+  .top .upd{font-size:12px; color:var(--dim)}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:14px 14px 12px; margin-bottom:14px; box-shadow:0 2px 10px rgba(0,0,0,.25)}
+  .head{display:flex; align-items:center; gap:10px; margin-bottom:10px}
+  .coin{font-size:19px; font-weight:800; letter-spacing:.3px}
+  .side{font-size:12px; color:var(--dim); font-weight:600}
+  .badge{margin-left:auto; font-size:12.5px; font-weight:800; padding:5px 11px; border-radius:999px;
+    text-transform:uppercase; letter-spacing:.4px; white-space:nowrap}
+  .b-hold{background:rgba(46,204,113,.16); color:var(--green)}
+  .b-exit{background:rgba(255,82,82,.16); color:var(--red)}
+  .b-warn{background:rgba(255,176,32,.16); color:var(--amber)}
+  .b-add{background:rgba(58,160,255,.16); color:var(--blue)}
+  .conf{font-size:11px; color:var(--dim); margin-left:6px; font-weight:600}
+  .price{font-size:13.5px; color:var(--dim); margin:0 0 12px 2px}
+  .price b{color:var(--txt)}
+  .sec-t{font-size:11px; text-transform:uppercase; letter-spacing:.6px; color:var(--dim);
+    margin:12px 2px 6px; font-weight:700}
+  .changed{background:var(--card2); border-radius:10px; padding:9px 11px; font-size:13.5px; color:#cfd6df}
+  .row{display:flex; gap:9px; align-items:flex-start; padding:7px 2px; border-top:1px solid var(--line); font-size:14px}
+  .row:first-of-type{border-top:none}
+  .ic{flex:0 0 auto; font-size:15px; line-height:1.4}
+  .lv{display:flex; gap:14px; margin-top:12px; padding-top:11px; border-top:1px solid var(--line)}
+  .lv div{font-size:13.5px}
+  .lv .k{color:var(--dim); font-size:11px; text-transform:uppercase; letter-spacing:.5px; display:block; margin-bottom:2px}
+  .lv .stop b{color:var(--red)} .lv .tgt b{color:var(--green)}
+  .empty{text-align:center; color:var(--dim); padding:50px 20px}
+  .foot{text-align:center; color:var(--dim); font-size:11.5px; margin-top:18px}
+  .err{background:rgba(255,82,82,.1); border:1px solid rgba(255,82,82,.3); color:#ffb3b3;
+    border-radius:12px; padding:12px; font-size:13px}
+</style>
+</head>
+<body>
+  <div class="top"><h1>🤑 Блокнот позиций</h1><span class="upd" id="upd"></span></div>
+  <div id="app"><div class="empty">Загружаю…</div></div>
+  <div class="foot" id="foot"></div>
+
+<script>
+try{ const tg=window.Telegram?.WebApp; if(tg){ tg.ready(); tg.expand();
+  document.documentElement.style.setProperty('--bg', tg.themeParams.bg_color||'#0e1116'); } }catch(e){}
+
+const esc=s=>(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+function badgeClass(action){
+  const a=(action||'').toUpperCase();
+  if(a.includes('ВЫХОД')) return 'b-exit';
+  if(a.includes('ДЕРЖ')) return 'b-hold';
+  if(a.includes('ДОБАВ')) return 'b-add';
+  if(a.includes('ФИКС')||a.includes('СТОП')) return 'b-warn';
+  return 'b-hold';
+}
+
+// разбор текста Claude в поля (формат из POSITION_PROMPT); всё best-effort, ломаться не должно
+function parse(text){
+  const t=(text||'').replace(/\r/g,''); const lines=t.split('\n');
+  const o={action:'',conf:'',header:'',price:'',changed:'',items:[],stop:'',target:''};
+  let sec='';
+  for(let raw of lines){
+    const l=raw.trim(); if(!l) continue;
+    let m;
+    if(m=l.match(/ДЕЙСТВИЕ:\s*(.+?)(?:·|\|| уверенность| увер)/i)){ o.action=m[1].trim();
+      const c=l.match(/уверенност[ьи]?\s*([1-5])/i); if(c)o.conf=c[1]; continue; }
+    if(l.startsWith('🟠')){ o.header=l.replace(/^🟠\s*/,''); continue; }
+    if(/^измен/i.test(l)){ sec='changed'; continue; }
+    if(/^слежу/i.test(l)){ sec='items'; continue; }
+    if(/^(стоп|цель)/i.test(l)){
+      const st=l.match(/стоп[^0-9]*([0-9][0-9.,\-–\s]*)/i); if(st)o.stop=st[1].trim().replace(/[·|].*$/,'').trim();
+      const tg=l.match(/цель[^0-9]*([0-9][0-9.,\-–\s]*)/i); if(tg)o.target=tg[1].trim();
+      sec=''; continue;
+    }
+    if(/^[✅⚠️🔴❓•\-]/.test(l)){
+      const ic=(l.match(/^(\p{Emoji_Presentation}|\p{Emoji})/u)||[])[0]||'•';
+      const txt=l.replace(/^([✅⚠️🔴❓•\-]️?)\s*/u,'').trim();
+      if(sec==='items') o.items.push({ic,txt});
+      else if(sec==='changed') o.changed+=(o.changed?' ':'')+txt;
+      continue;
+    }
+    if(sec==='changed'){ o.changed+=(o.changed?' ':'')+l; }
+  }
+  return o;
+}
+
+function card(p){
+  const o=parse(p.text);
+  const sideRu=p.side==='long'?'лонг':'шорт';
+  const items=o.items.map(it=>`<div class="row"><span class="ic">${esc(it.ic)}</span><span>${esc(it.txt)}</span></div>`).join('');
+  const lv=(o.stop||o.target)?`<div class="lv">
+      ${o.stop?`<div class="stop"><span class="k">стоп</span><b>${esc(o.stop)}</b></div>`:''}
+      ${o.target?`<div class="tgt"><span class="k">цель</span><b>${esc(o.target)}</b></div>`:''}
+    </div>`:'';
+  // если разобрать не удалось (нет действия) — показываем сырой текст, чтобы не терять данные
+  if(!o.action && !items){
+    return `<div class="card"><div class="head"><span class="coin">${esc(p.coin)}</span>
+      <span class="side">${sideRu} от ${esc(String(p.entry))}</span></div>
+      <div class="changed" style="white-space:pre-wrap">${esc(p.text)}</div></div>`;
+  }
+  return `<div class="card">
+    <div class="head">
+      <span class="coin">${esc(p.coin)}</span>
+      <span class="side">${sideRu} · вход ${esc(String(p.entry))}</span>
+      <span class="badge ${badgeClass(o.action)}">${esc(o.action||'—')}${o.conf?`<span class="conf">${o.conf}/5</span>`:''}</span>
+    </div>
+    ${o.header?`<div class="price">${esc(o.header)}</div>`:''}
+    ${o.changed?`<div class="sec-t">изменилось</div><div class="changed">${esc(o.changed)}</div>`:''}
+    ${items?`<div class="sec-t">слежу</div>${items}`:''}
+    ${lv}
+  </div>`;
+}
+
+fetch('data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
+  document.getElementById('upd').textContent='обновлено '+(d.updated||'');
+  const app=document.getElementById('app');
+  if(!d.positions||!d.positions.length){ app.innerHTML='<div class="empty">Открытых позиций нет.<br>Скажи боту «вошёл в …», и они появятся здесь.</div>'; return; }
+  app.innerHTML=d.positions.map(card).join('');
+  document.getElementById('foot').textContent='Данные обновляются раз в 4 часа. Цену смотри в биржевом приложении — здесь вердикт: что делать.';
+}).catch(e=>{
+  document.getElementById('app').innerHTML='<div class="err">Не удалось загрузить данные (data.json). Если репозиторий только создан — подожди первый прогон крона.</div>';
+});
+</script>
+</body>
+</html>
