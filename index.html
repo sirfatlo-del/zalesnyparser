@@ -82,7 +82,10 @@
     <div class="chips" id="chips"></div>
     <div class="carousel" id="carousel"><div class="empty">Загружаю…</div></div>
   </div>
-  <div id="view-crime" class="hidden"></div>
+  <div id="view-crime" class="hidden">
+    <div id="crime-analysis"></div>
+    <div id="crime-table"></div>
+  </div>
 
   <div class="foot" id="foot"></div>
 
@@ -124,10 +127,18 @@ const carousel=document.getElementById('carousel'), chipsBox=document.getElement
 function setActive(i){ if(i<0||i>=SIG.length) return; active=i;
   [...chipsBox.children].forEach((c,idx)=>c.classList.toggle('active', idx===i));
   const chip=chipsBox.children[i]; if(chip) chip.scrollIntoView({inline:'center', block:'nearest', behavior:'smooth'}); }
+function renderCrimeAnalysis(list){
+  const box=document.getElementById('crime-analysis');
+  if(!list.length){ box.innerHTML=''; return; }
+  box.innerHTML='<div class="sec-t" style="margin:2px 14px 8px">Разборы крайм-монет</div>'
+    + list.map(s=>`<div style="padding:0 14px 10px">${cardHTML(s)}</div>`).join('');
+}
 function loadSignals(){
   fetch('data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
-    SIG=d.signals||[];
-    if(!SIG.length){ carousel.innerHTML='<div class="empty">Пока коллов нет.<br>Скринер кладёт их сюда раз в 4 часа. Если рынок вялый или всё ПУСТО — пусто, это норма. Смотри вкладку Крайм.</div>'; chipsBox.innerHTML=''; return; }
+    const all=d.signals||[];
+    SIG=all.filter(s=>!s.crime);                 // не-крайм → вкладка Сигналы
+    renderCrimeAnalysis(all.filter(s=>s.crime));  // крайм-разборы → вкладка Крайм
+    if(!SIG.length){ carousel.innerHTML='<div class="empty">Пока коллов нет.<br>Скринер кладёт их сюда раз в 4 часа. Крайм-монеты идут в свою вкладку. Если рынок вялый или всё ПУСТО — пусто, это норма.</div>'; chipsBox.innerHTML=''; return; }
     chipsBox.innerHTML=SIG.map((s,i)=>`<div class="chip ${isShort(s.verdict)?'short':'long'}" data-i="${i}">${esc(s.coin)}<small>${isShort(s.verdict)?'шорт':'лонг'}</small></div>`).join('');
     carousel.innerHTML=SIG.map(s=>`<div class="slide">${cardHTML(s)}</div>`).join('');
     slideW=carousel.clientWidth;
@@ -155,14 +166,14 @@ function crimeRow(c){
     </div></div>`;
 }
 function loadCrime(){
-  const v=document.getElementById('view-crime');
+  const v=document.getElementById('view-crime'), t=document.getElementById('crime-table');
   fetch('crime.json?t='+Date.now()).then(r=>r.json()).then(d=>{
     const rows=d.coins||[];
-    if(!rows.length){ v.innerHTML='<div class="empty">Крайм-монеты пока тихо.</div>'; return; }
-    v.innerHTML=rows.map(crimeRow).join('');
+    t.innerHTML='<div class="sec-t" style="margin:14px 14px 8px">Пульс фермы · Aster · фандинг и OI</div>'
+      + (rows.length ? rows.map(crimeRow).join('') : '<div class="empty">Крайм-монеты пока тихо.</div>');
     v.dataset.upd=d.updated||'';
     if(document.getElementById('tab-crime').classList.contains('on')) document.getElementById('upd').textContent='обновлено '+(d.updated||'');
-  }).catch(e=>{ v.innerHTML='<div class="err">Не удалось загрузить крайм-данные.</div>'; });
+  }).catch(e=>{ t.innerHTML='<div class="err">Не удалось загрузить крайм-данные.</div>'; });
 }
 
 /* ===== переключение вкладок ===== */
