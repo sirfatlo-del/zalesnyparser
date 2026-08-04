@@ -1,116 +1,116 @@
 {
- "updated": "2026-08-04 04:15 UTC+3",
+ "updated": "2026-08-04 04:30 UTC+3",
  "kind": "crime",
  "coins": [
   {
    "coin": "DEXE",
-   "fapr": -89,
-   "mark": 2.22,
+   "fapr": -75,
+   "mark": 2.217,
    "chg24": -2.8,
-   "vol_usd": 484893,
+   "vol_usd": 485291,
    "lean": "ЛОНГ",
-   "strength": 88.540605,
-   "oi_usd": 105268,
+   "strength": 75.11919,
+   "oi_usd": 105159,
    "oi_jump_pct": 0
   },
   {
    "coin": "AIO",
-   "fapr": 69,
-   "mark": 0.03523542,
-   "chg24": -7.1,
-   "vol_usd": 75158,
+   "fapr": 71,
+   "mark": 0.03515,
+   "chg24": -5.3,
+   "vol_usd": 71113,
    "lean": "ШОРТ",
-   "strength": 69.4449,
-   "oi_usd": 26648,
-   "oi_jump_pct": 0
+   "strength": 71.342535,
+   "oi_usd": 27576,
+   "oi_jump_pct": 3
   },
   {
    "coin": "B",
-   "fapr": 46,
-   "mark": 0.166,
+   "fapr": 45,
+   "mark": 0.1657824,
    "chg24": 1.8,
    "vol_usd": 72953,
    "lean": "—",
-   "strength": 45.620985000000005,
-   "oi_usd": 1721033,
-   "oi_jump_pct": null
+   "strength": 45.47754,
+   "oi_usd": 1718777,
+   "oi_jump_pct": 0
   },
   {
    "coin": "UB",
-   "fapr": 43,
-   "mark": 0.1871212,
+   "fapr": 44,
+   "mark": 0.18859527,
    "chg24": 12.9,
    "vol_usd": 122202,
    "lean": "—",
-   "strength": 43.28535000000001,
-   "oi_usd": 1097924,
-   "oi_jump_pct": null
+   "strength": 44.396775000000005,
+   "oi_usd": 1106573,
+   "oi_jump_pct": 1
   },
   {
    "coin": "HOME",
-   "fapr": -25,
-   "mark": 0.00779724,
-   "chg24": 13.3,
-   "vol_usd": 390119,
+   "fapr": -28,
+   "mark": 0.00779655,
+   "chg24": 16.5,
+   "vol_usd": 398685,
    "lean": "—",
-   "strength": 24.73824,
-   "oi_usd": 56106,
-   "oi_jump_pct": null
-  },
-  {
-   "coin": "AGT",
-   "fapr": 22,
-   "mark": 0.015001,
-   "chg24": 10.7,
-   "vol_usd": 77441,
-   "lean": "—",
-   "strength": 22.144185,
-   "oi_usd": 812952,
-   "oi_jump_pct": null
-  },
-  {
-   "coin": "SLX",
-   "fapr": -21,
-   "mark": 0.07649992,
-   "chg24": -5.0,
-   "vol_usd": 121784,
-   "lean": "—",
-   "strength": 20.52687,
-   "oi_usd": 42598,
-   "oi_jump_pct": null
+   "strength": 27.83928,
+   "oi_usd": 56101,
+   "oi_jump_pct": 0
   },
   {
    "coin": "ESPORTS",
-   "fapr": 20,
-   "mark": 0.01768,
+   "fapr": 25,
+   "mark": 0.01759334,
    "chg24": -1.3,
-   "vol_usd": 964362,
+   "vol_usd": 958450,
    "lean": "—",
-   "strength": 20.356049999999996,
-   "oi_usd": 2583470,
-   "oi_jump_pct": null
+   "strength": 24.76233,
+   "oi_usd": 2563424,
+   "oi_jump_pct": -1
+  },
+  {
+   "coin": "SLX",
+   "fapr": -23,
+   "mark": 0.0764885,
+   "chg24": -5.0,
+   "vol_usd": 122696,
+   "lean": "—",
+   "strength": 23.120925,
+   "oi_usd": 42592,
+   "oi_jump_pct": 0
+  },
+  {
+   "coin": "BANK",
+   "fapr": -22,
+   "mark": 0.04407778,
+   "chg24": 1.2,
+   "vol_usd": 856615,
+   "lean": "—",
+   "strength": 22.220835,
+   "oi_usd": 171118,
+   "oi_jump_pct": -1
+  },
+  {
+   "coin": "BTW",
+   "fapr": 18,
+   "mark": 0.10835,
+   "chg24": 36.8,
+   "vol_usd": 786581,
+   "lean": "—",
+   "strength": 17.509050000000002,
+   "oi_usd": 3829273,
+   "oi_jump_pct": 0
   },
   {
    "coin": "ZEST",
-   "fapr": 19,
+   "fapr": 17,
    "mark": 0.24863,
    "chg24": -0.1,
    "vol_usd": 58184,
    "lean": "—",
-   "strength": 18.802245,
-   "oi_usd": 458650,
-   "oi_jump_pct": null
-  },
-  {
-   "coin": "BTW",
-   "fapr": 19,
-   "mark": 0.10875,
-   "chg24": 37.8,
-   "vol_usd": 786613,
-   "lean": "—",
-   "strength": 18.621570000000002,
-   "oi_usd": 3843052,
-   "oi_jump_pct": null
+   "strength": 17.25063,
+   "oi_usd": 458760,
+   "oi_jump_pct": 0
   },
   {
    "coin": "IDOL",
@@ -119,53 +119,53 @@
    "chg24": -26.2,
    "vol_usd": 226678,
    "lean": "—",
-   "strength": 15.84684,
+   "strength": 16.222424999999998,
    "oi_usd": 108898,
-   "oi_jump_pct": null
+   "oi_jump_pct": 0
+  },
+  {
+   "coin": "AGT",
+   "fapr": 15,
+   "mark": 0.01491916,
+   "chg24": 10.3,
+   "vol_usd": 77790,
+   "lean": "—",
+   "strength": 14.789069999999999,
+   "oi_usd": 808517,
+   "oi_jump_pct": -1
   },
   {
    "coin": "ON",
-   "fapr": 15,
-   "mark": 0.24937657,
+   "fapr": 14,
+   "mark": 0.24911383,
    "chg24": 0.5,
    "vol_usd": 168862,
    "lean": "—",
-   "strength": 14.561309999999999,
-   "oi_usd": 646100,
-   "oi_jump_pct": null
+   "strength": 13.880220000000001,
+   "oi_usd": 645417,
+   "oi_jump_pct": 0
   },
   {
-   "coin": "BANK",
-   "fapr": -13,
-   "mark": 0.04432,
-   "chg24": 1.6,
-   "vol_usd": 857762,
+   "coin": "BLESS",
+   "fapr": 13,
+   "mark": 0.01395727,
+   "chg24": -34.2,
+   "vol_usd": 2756351,
    "lean": "—",
-   "strength": 12.72171,
-   "oi_usd": 172143,
+   "strength": 13.340385,
+   "oi_usd": 133304,
    "oi_jump_pct": null
   },
   {
    "coin": "NEAR",
    "fapr": 11,
-   "mark": 1.73628896,
+   "mark": 1.74121342,
    "chg24": 1.4,
    "vol_usd": 321597,
    "lean": "—",
    "strength": 10.950000000000001,
-   "oi_usd": 1053917,
-   "oi_jump_pct": null
-  },
-  {
-   "coin": "H",
-   "fapr": 10,
-   "mark": 0.07490968,
-   "chg24": -2.0,
-   "vol_usd": 54535,
-   "lean": "—",
-   "strength": 9.974355,
-   "oi_usd": 181562,
-   "oi_jump_pct": null
+   "oi_usd": 1056906,
+   "oi_jump_pct": 0
   }
  ]
 }
