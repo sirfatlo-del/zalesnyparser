@@ -1,18 +1,18 @@
 {
- "updated": "2026-08-07 06:00 UTC+3",
+ "updated": "2026-08-07 06:15 UTC+3",
  "kind": "crime",
  "coins": [
   {
    "coin": "HOME",
    "venue": "Binance",
-   "fapr": -542,
-   "mark": 0.009094,
-   "chg24": 0.5,
-   "vol_usd": 112120738,
+   "fapr": -513,
+   "mark": 0.008867,
+   "chg24": -1.1,
+   "vol_usd": 111908883,
    "lean": "ЛОНГ",
-   "strength": 541.82352,
-   "oi_usd": 12665610,
-   "oi_jump_pct": -2,
+   "strength": 513.437835,
+   "oi_usd": 12330681,
+   "oi_jump_pct": -3,
    "vynos": {
     "count": 2,
     "last_ago_h": 16,
@@ -21,15 +21,33 @@
    }
   },
   {
+   "coin": "STAR",
+   "venue": "Binance",
+   "fapr": 129,
+   "mark": 0.09561447,
+   "chg24": 18.1,
+   "vol_usd": 6991821,
+   "lean": "ШОРТ",
+   "strength": 128.86507499999996,
+   "oi_usd": 2598986,
+   "oi_jump_pct": 7,
+   "vynos": {
+    "count": 1,
+    "last_ago_h": 45,
+    "max_pct": 11,
+    "ripe": false
+   }
+  },
+  {
    "coin": "SIREN",
    "venue": "Binance",
-   "fapr": 115,
-   "mark": 0.03051469,
-   "chg24": 8.8,
-   "vol_usd": 5787802,
+   "fapr": 98,
+   "mark": 0.03013,
+   "chg24": 7.1,
+   "vol_usd": 5935363,
    "lean": "ШОРТ",
-   "strength": 115.243275,
-   "oi_usd": 11001471,
+   "strength": 97.79664,
+   "oi_usd": 10842102,
    "oi_jump_pct": -1,
    "vynos": {
     "count": 1,
@@ -39,34 +57,16 @@
    }
   },
   {
-   "coin": "STAR",
-   "venue": "Binance",
-   "fapr": 108,
-   "mark": 0.09072,
-   "chg24": 12.9,
-   "vol_usd": 6922592,
-   "lean": "ШОРТ",
-   "strength": 107.799465,
-   "oi_usd": 2427349,
-   "oi_jump_pct": -1,
-   "vynos": {
-    "count": 1,
-    "last_ago_h": 45,
-    "max_pct": 11,
-    "ripe": false
-   }
-  },
-  {
    "coin": "ON",
    "venue": "Binance",
-   "fapr": 87,
-   "mark": 0.41031,
-   "chg24": 61.0,
-   "vol_usd": 113639566,
+   "fapr": 90,
+   "mark": 0.4141,
+   "chg24": 60.9,
+   "vol_usd": 115157893,
    "lean": "ШОРТ",
-   "strength": 86.88825000000001,
-   "oi_usd": 21326457,
-   "oi_jump_pct": 2,
+   "strength": 89.57757000000001,
+   "oi_usd": 21618777,
+   "oi_jump_pct": 1,
    "vynos": {
     "count": 12,
     "last_ago_h": 2,
@@ -75,15 +75,51 @@
    }
   },
   {
+   "coin": "BTW",
+   "venue": "Binance",
+   "fapr": 67,
+   "mark": 0.17598071,
+   "chg24": 8.4,
+   "vol_usd": 91351147,
+   "lean": "ШОРТ",
+   "strength": 67.255995,
+   "oi_usd": 37060014,
+   "oi_jump_pct": -6,
+   "vynos": {
+    "count": 7,
+    "last_ago_h": 0,
+    "max_pct": 25,
+    "ripe": false
+   }
+  },
+  {
+   "coin": "CLO",
+   "venue": "Binance",
+   "fapr": 67,
+   "mark": 0.12285522,
+   "chg24": -3.4,
+   "vol_usd": 2066834,
+   "lean": "ШОРТ",
+   "strength": 66.732585,
+   "oi_usd": 4479191,
+   "oi_jump_pct": 1,
+   "vynos": {
+    "count": 0,
+    "last_ago_h": null,
+    "max_pct": 6,
+    "ripe": false
+   }
+  },
+  {
    "coin": "BLUAI",
    "venue": "Binance",
-   "fapr": 74,
-   "mark": 0.01343667,
-   "chg24": 8.2,
-   "vol_usd": 1712801,
+   "fapr": 67,
+   "mark": 0.013422,
+   "chg24": 7.7,
+   "vol_usd": 1710035,
    "lean": "ШОРТ",
-   "strength": 73.830375,
-   "oi_usd": 6230734,
+   "strength": 66.59352,
+   "oi_usd": 6223245,
    "oi_jump_pct": 0,
    "vynos": {
     "count": 1,
@@ -93,51 +129,15 @@
    }
   },
   {
-   "coin": "BTW",
-   "venue": "Binance",
-   "fapr": 73,
-   "mark": 0.18687511,
-   "chg24": 16.6,
-   "vol_usd": 90203716,
-   "lean": "ШОРТ",
-   "strength": 73.30039499999998,
-   "oi_usd": 39469791,
-   "oi_jump_pct": -2,
-   "vynos": {
-    "count": 6,
-    "last_ago_h": 1,
-    "max_pct": 25,
-    "ripe": false
-   }
-  },
-  {
-   "coin": "CLO",
-   "venue": "Binance",
-   "fapr": 67,
-   "mark": 0.12151926,
-   "chg24": -4.3,
-   "vol_usd": 2051049,
-   "lean": "ШОРТ",
-   "strength": 66.58147499999998,
-   "oi_usd": 4432171,
-   "oi_jump_pct": -1,
-   "vynos": {
-    "count": 0,
-    "last_ago_h": null,
-    "max_pct": 6,
-    "ripe": false
-   }
-  },
-  {
    "coin": "APR",
    "venue": "Binance",
-   "fapr": 67,
-   "mark": 0.1908,
-   "chg24": -1.9,
-   "vol_usd": 2023187,
+   "fapr": 61,
+   "mark": 0.18986107,
+   "chg24": -2.8,
+   "vol_usd": 2037469,
    "lean": "ШОРТ",
-   "strength": 66.50592,
-   "oi_usd": 8694032,
+   "strength": 60.909375,
+   "oi_usd": 8661840,
    "oi_jump_pct": 0,
    "vynos": {
     "count": 1,
@@ -147,69 +147,15 @@
    }
   },
   {
-   "coin": "4",
-   "venue": "Binance",
-   "fapr": 53,
-   "mark": 0.010556,
-   "chg24": -1.4,
-   "vol_usd": 5780146,
-   "lean": "ШОРТ",
-   "strength": 53.1951,
-   "oi_usd": 3889020,
-   "oi_jump_pct": -3,
-   "vynos": {
-    "count": 0,
-    "last_ago_h": null,
-    "max_pct": 8,
-    "ripe": false
-   }
-  },
-  {
-   "coin": "B",
-   "venue": "Binance",
-   "fapr": 50,
-   "mark": 0.17034682,
-   "chg24": -2.8,
-   "vol_usd": 2098052,
-   "lean": "—",
-   "strength": 49.695479999999996,
-   "oi_usd": 9912854,
-   "oi_jump_pct": -1,
-   "vynos": {
-    "count": 0,
-    "last_ago_h": null,
-    "max_pct": 3,
-    "ripe": false
-   }
-  },
-  {
-   "coin": "AGT",
-   "venue": "Binance",
-   "fapr": 49,
-   "mark": 0.014134,
-   "chg24": -11.2,
-   "vol_usd": 3114270,
-   "lean": "—",
-   "strength": 48.99468000000001,
-   "oi_usd": 3344022,
-   "oi_jump_pct": 0,
-   "vynos": {
-    "count": 0,
-    "last_ago_h": null,
-    "max_pct": 9,
-    "ripe": false
-   }
-  },
-  {
    "coin": "AKE",
    "venue": "Binance",
-   "fapr": 49,
-   "mark": 0.00418167,
-   "chg24": 6.1,
-   "vol_usd": 53266647,
-   "lean": "—",
-   "strength": 48.54792,
-   "oi_usd": 25984567,
+   "fapr": 50,
+   "mark": 0.0042132,
+   "chg24": 7.4,
+   "vol_usd": 52653564,
+   "lean": "ШОРТ",
+   "strength": 50.23641,
+   "oi_usd": 26196195,
    "oi_jump_pct": 1,
    "vynos": {
     "count": 1,
@@ -222,12 +168,12 @@
    "coin": "AIA",
    "venue": "Binance",
    "fapr": 48,
-   "mark": 0.06608414,
-   "chg24": -4.3,
-   "vol_usd": 3377027,
+   "mark": 0.06632,
+   "chg24": -3.2,
+   "vol_usd": 3320820,
    "lean": "—",
-   "strength": 48.144960000000005,
-   "oi_usd": 4289651,
+   "strength": 47.618265,
+   "oi_usd": 4301359,
    "oi_jump_pct": 0,
    "vynos": {
     "count": 1,
@@ -239,14 +185,14 @@
   {
    "coin": "SOON",
    "venue": "Binance",
-   "fapr": 47,
-   "mark": 0.2217,
-   "chg24": 2.0,
-   "vol_usd": 5322722,
+   "fapr": 46,
+   "mark": 0.2187,
+   "chg24": 0.5,
+   "vol_usd": 5363389,
    "lean": "—",
-   "strength": 47.37627,
-   "oi_usd": 9259657,
-   "oi_jump_pct": 0,
+   "strength": 46.34478,
+   "oi_usd": 9128722,
+   "oi_jump_pct": -1,
    "vynos": {
     "count": 0,
     "last_ago_h": null,
@@ -255,20 +201,74 @@
    }
   },
   {
-   "coin": "ESPORTS",
+   "coin": "B",
    "venue": "Binance",
-   "fapr": 45,
-   "mark": 0.01955,
-   "chg24": -3.5,
-   "vol_usd": 48646496,
+   "fapr": 46,
+   "mark": 0.1702,
+   "chg24": -2.6,
+   "vol_usd": 2106049,
    "lean": "—",
-   "strength": 44.624535,
-   "oi_usd": 10190539,
-   "oi_jump_pct": -2,
+   "strength": 46.13782500000001,
+   "oi_usd": 9908255,
+   "oi_jump_pct": 0,
    "vynos": {
-    "count": 11,
-    "last_ago_h": 1,
-    "max_pct": 40,
+    "count": 0,
+    "last_ago_h": null,
+    "max_pct": 3,
+    "ripe": false
+   }
+  },
+  {
+   "coin": "AGT",
+   "venue": "Binance",
+   "fapr": 46,
+   "mark": 0.01416068,
+   "chg24": -11.0,
+   "vol_usd": 3101089,
+   "lean": "—",
+   "strength": 46.087455,
+   "oi_usd": 3352197,
+   "oi_jump_pct": 0,
+   "vynos": {
+    "count": 0,
+    "last_ago_h": null,
+    "max_pct": 9,
+    "ripe": false
+   }
+  },
+  {
+   "coin": "AIOT",
+   "venue": "Binance",
+   "fapr": 46,
+   "mark": 0.04000395,
+   "chg24": -1.9,
+   "vol_usd": 2461692,
+   "lean": "—",
+   "strength": 45.852030000000006,
+   "oi_usd": 1934700,
+   "oi_jump_pct": null,
+   "vynos": {
+    "count": 0,
+    "last_ago_h": null,
+    "max_pct": 9,
+    "ripe": false
+   }
+  },
+  {
+   "coin": "FOLKS",
+   "venue": "Binance",
+   "fapr": 44,
+   "mark": 2.006,
+   "chg24": -4.0,
+   "vol_usd": 1392450,
+   "lean": "—",
+   "strength": 43.66422,
+   "oi_usd": 6553987,
+   "oi_jump_pct": null,
+   "vynos": {
+    "count": 0,
+    "last_ago_h": null,
+    "max_pct": 3,
     "ripe": false
    }
   }
