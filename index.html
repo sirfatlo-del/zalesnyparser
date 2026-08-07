@@ -160,6 +160,7 @@ function crimeRow(c){
   const ripe = v.ripe ? ' style="border-color:var(--accent)"' : '';
   return `<div class="crow"${ripe}>
     <div class="cr-top"><span class="cr-coin">${esc(c.coin)}</span>
+      ${c.venue?`<span style="font-size:11px;color:var(--dim);font-weight:700">${esc(c.venue)}</span>`:''}
       <span class="cr-lean ${lean}">${esc(c.lean)}</span></div>
     <div class="cr-nums">
       <span>фандинг <b class="${fcls}">${c.fapr>0?'+':''}${c.fapr}%год</b></span>
