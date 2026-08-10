@@ -159,6 +159,8 @@ function crimeRow(c){
     ? ` <b class="${c.oi_jump_pct>0?'up':'dn'}">скачок за 15м ${c.oi_jump_pct>0?'+':''}${c.oi_jump_pct}%</b>` : '';
   const v=c.vynos||{};
   const vy = v.count ? `<span>выносов <b>${v.count}</b>${v.last_ago_h!=null?` · ${v.last_ago_h}ч назад`:''}${v.ripe?' <b class="up">созрел 6-36ч</b>':''}</span>` : '';
+  const b=c.buys||{};
+  const bz = b.count ? `<span>закупы <b>${b.count}</b>${b.max_x?` · до x${b.max_x}`:''}${b.last_ago_h!=null?` · ${b.last_ago_h}ч назад`:''}${b.count>=3?' <b class="up">набор под лонг</b>':''}</span>` : '';
   const ripe = v.ripe ? ' style="border-color:var(--accent)"' : '';
   return `<div class="crow"${ripe}>
     <div class="cr-top"><span class="cr-coin">${esc(c.coin)}</span>
@@ -170,6 +172,7 @@ function crimeRow(c){
       <span>OI <b>${money(c.oi_usd)}</b>${jump}</span>
       <span>объём <b>${money(c.vol_usd)}</b></span>
       ${vy}
+      ${bz}
     </div></div>`;
 }
 function loadCrime(){
