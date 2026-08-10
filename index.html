@@ -151,10 +151,12 @@ function loadSignals(){
 /* ===== вкладка КРАЙМ ===== */
 function crimeRow(c){
   const lean = isShort(c.lean)?'b-short':(isLong(c.lean)?'b-long':'b-none');
-  const fcls = c.fapr>0?'up':(c.fapr<0?'dn':'');
+  const fp = (c.funding_pct!==undefined && c.funding_pct!==null) ? c.funding_pct : c.fapr;
+  const fcls = fp>0?'up':(fp<0?'dn':'');
+  const fnext = (c.next_funding_h!==undefined && c.next_funding_h!==null) ? ` · списание через ${c.next_funding_h}ч` : '';
   const chg = c.chg24>=0?`<span class="up">+${c.chg24}%</span>`:`<span class="dn">${c.chg24}%</span>`;
   const jump = (c.oi_jump_pct!==null && c.oi_jump_pct!==undefined && c.oi_jump_pct!==0)
-    ? ` <b class="${c.oi_jump_pct>0?'up':'dn'}">скачок ${c.oi_jump_pct>0?'+':''}${c.oi_jump_pct}%</b>` : '';
+    ? ` <b class="${c.oi_jump_pct>0?'up':'dn'}">скачок за 15м ${c.oi_jump_pct>0?'+':''}${c.oi_jump_pct}%</b>` : '';
   const v=c.vynos||{};
   const vy = v.count ? `<span>выносов <b>${v.count}</b>${v.last_ago_h!=null?` · ${v.last_ago_h}ч назад`:''}${v.ripe?' <b class="up">созрел 6-36ч</b>':''}</span>` : '';
   const ripe = v.ripe ? ' style="border-color:var(--accent)"' : '';
@@ -163,7 +165,7 @@ function crimeRow(c){
       ${c.venue?`<span style="font-size:11px;color:var(--dim);font-weight:700">${esc(c.venue)}</span>`:''}
       <span class="cr-lean ${lean}">${esc(c.lean)}</span></div>
     <div class="cr-nums">
-      <span>фандинг <b class="${fcls}">${c.fapr>0?'+':''}${c.fapr}%год</b></span>
+      <span>фандинг <b class="${fcls}">${fp>0?'+':''}${fp}%</b>${fnext}</span>
       <span>сутки ${chg}</span>
       <span>OI <b>${money(c.oi_usd)}</b>${jump}</span>
       <span>объём <b>${money(c.vol_usd)}</b></span>
