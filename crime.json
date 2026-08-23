@@ -1,120 +1,120 @@
 {
- "updated": "2026-08-23 13:15 UTC+3",
+ "updated": "2026-08-23 13:30 UTC+3",
  "kind": "crime",
  "coins": [
   {
-   "coin": "GWEI",
-   "venue": "Binance",
-   "fapr": -57,
-   "funding_pct": -0.052,
-   "next_funding_h": 1.7,
-   "mark": 0.02329,
-   "chg24": 3.1,
-   "vol_usd": 5793753,
-   "lean": "ЛОНГ",
-   "strength": 56.713335,
-   "oi_usd": 2979487,
-   "oi_jump_pct": 1,
-   "vynos": {
-    "count": 1,
-    "last_ago_h": 29,
-    "max_pct": 33,
-    "ripe": true
-   },
-   "buys": {
-    "count": 3,
-    "last_ago_h": 29,
-    "max_x": 9.8
-   }
-  },
-  {
    "coin": "HOME",
    "venue": "Binance",
-   "fapr": -54,
-   "funding_pct": -0.049,
-   "next_funding_h": 1.7,
-   "mark": 0.006318,
-   "chg24": -0.4,
-   "vol_usd": 16502719,
+   "fapr": -52,
+   "funding_pct": -0.048,
+   "next_funding_h": 1.5,
+   "mark": 0.0062861,
+   "chg24": 0.5,
+   "vol_usd": 16157345,
    "lean": "ЛОНГ",
-   "strength": 53.76888000000001,
-   "oi_usd": 7446730,
+   "strength": 52.12090499999999,
+   "oi_usd": 7399322,
    "oi_jump_pct": -1,
    "vynos": {
     "count": 1,
-    "last_ago_h": 29,
+    "last_ago_h": 30,
     "max_pct": 36,
     "ripe": true
    },
    "buys": {
     "count": 4,
-    "last_ago_h": 5,
+    "last_ago_h": 6,
     "max_x": 5.8
+   }
+  },
+  {
+   "coin": "GWEI",
+   "venue": "Binance",
+   "fapr": -49,
+   "funding_pct": -0.045,
+   "next_funding_h": 1.5,
+   "mark": 0.02333,
+   "chg24": 3.2,
+   "vol_usd": 5666629,
+   "lean": "—",
+   "strength": 48.97059000000001,
+   "oi_usd": 2981777,
+   "oi_jump_pct": 0,
+   "vynos": {
+    "count": 1,
+    "last_ago_h": 30,
+    "max_pct": 33,
+    "ripe": true
+   },
+   "buys": {
+    "count": 3,
+    "last_ago_h": 30,
+    "max_x": 9.8
+   }
+  },
+  {
+   "coin": "EDU",
+   "venue": "Binance",
+   "fapr": 48,
+   "funding_pct": 0.044,
+   "next_funding_h": 5.5,
+   "mark": 0.0399,
+   "chg24": -1.7,
+   "vol_usd": 1658195,
+   "lean": "—",
+   "strength": 47.683965,
+   "oi_usd": 3278132,
+   "oi_jump_pct": 0,
+   "vynos": {
+    "count": 1,
+    "last_ago_h": 30,
+    "max_pct": 22,
+    "ripe": true
+   },
+   "buys": {
+    "count": 4,
+    "last_ago_h": 27,
+    "max_x": 9.5
    }
   },
   {
    "coin": "EDGE",
    "venue": "Binance",
-   "fapr": 51,
-   "funding_pct": 0.047,
-   "next_funding_h": 1.7,
-   "mark": 0.37349704,
-   "chg24": 7.9,
-   "vol_usd": 3949540,
-   "lean": "ШОРТ",
-   "strength": 51.089414999999995,
-   "oi_usd": 5242670,
-   "oi_jump_pct": 1,
+   "fapr": 46,
+   "funding_pct": 0.042,
+   "next_funding_h": 1.5,
+   "mark": 0.36785961,
+   "chg24": 7.3,
+   "vol_usd": 3881838,
+   "lean": "—",
+   "strength": 45.977955,
+   "oi_usd": 5141306,
+   "oi_jump_pct": -2,
    "vynos": {
     "count": 1,
-    "last_ago_h": 29,
+    "last_ago_h": 30,
     "max_pct": 16,
     "ripe": true
    },
    "buys": {
     "count": 4,
-    "last_ago_h": 29,
-    "max_x": 6.5
-   }
-  },
-  {
-   "coin": "AIOT",
-   "venue": "Binance",
-   "fapr": 51,
-   "funding_pct": 0.046,
-   "next_funding_h": 1.7,
-   "mark": 0.03938,
-   "chg24": -5.2,
-   "vol_usd": 990770,
-   "lean": "ШОРТ",
-   "strength": 50.868225,
-   "oi_usd": 2079453,
-   "oi_jump_pct": 0,
-   "vynos": {
-    "count": 1,
-    "last_ago_h": 29,
-    "max_pct": 41,
-    "ripe": true
-   },
-   "buys": {
-    "count": 3,
-    "last_ago_h": 29,
-    "max_x": 16.3
+    "last_ago_h": 30,
+    "max_x": 6.3
    }
   },
   {
    "coin": "STABLE",
    "venue": "Binance",
-   "fapr": -49,
-   "funding_pct": -0.045,
-   "next_funding_h": 1.7,
-   "mark": 0.0306428,
-   "chg24": -2.7,
-   "vol_usd": 3351019,
+   "fapr": -46,
+   "funding_pct": -0.042,
+   "next_funding_h": 1.5,
+   "mark": 0.03101,
+   "chg24": -1.9,
+   "vol_usd": 3384763,
    "lean": "—",
-   "strength": 48.99468000000001,
-   "oi_usd": 5518404,
-   "oi_jump_pct": 0,
+   "strength": 45.54105,
+   "oi_usd": 5591339,
+   "oi_jump_pct": 1,
    "vynos": {
     "count": 0,
     "last_ago_h": null,
@@ -123,233 +123,208 @@
    },
    "buys": {
     "count": 6,
-    "last_ago_h": 23,
+    "last_ago_h": 24,
     "max_x": 24.4
    }
   },
   {
-   "coin": "EDU",
+   "coin": "AIOT",
    "venue": "Binance",
-   "fapr": 48,
-   "funding_pct": 0.044,
-   "next_funding_h": 5.7,
-   "mark": 0.03974,
-   "chg24": -2.1,
-   "vol_usd": 1676362,
+   "fapr": 44,
+   "funding_pct": 0.04,
+   "next_funding_h": 1.5,
+   "mark": 0.03933,
+   "chg24": -4.6,
+   "vol_usd": 971591,
    "lean": "—",
-   "strength": 48.07488000000001,
-   "oi_usd": 3267924,
+   "strength": 44.30151,
+   "oi_usd": 2075063,
    "oi_jump_pct": 0,
    "vynos": {
     "count": 1,
-    "last_ago_h": 29,
-    "max_pct": 22,
+    "last_ago_h": 30,
+    "max_pct": 41,
     "ripe": true
    },
    "buys": {
-    "count": 4,
-    "last_ago_h": 26,
-    "max_x": 9.5
+    "count": 3,
+    "last_ago_h": 30,
+    "max_x": 16.3
    }
   },
   {
    "coin": "TRIA",
    "venue": "Binance",
-   "fapr": 35,
-   "funding_pct": 0.032,
-   "next_funding_h": 1.7,
-   "mark": 0.007056,
-   "chg24": -1.5,
-   "vol_usd": 12012489,
+   "fapr": 34,
+   "funding_pct": 0.031,
+   "next_funding_h": 1.5,
+   "mark": 0.00704426,
+   "chg24": -2.1,
+   "vol_usd": 11834855,
    "lean": "—",
-   "strength": 35.207535,
-   "oi_usd": 5006237,
-   "oi_jump_pct": 1,
+   "strength": 33.617595,
+   "oi_usd": 5003018,
+   "oi_jump_pct": 0,
    "vynos": {
     "count": 1,
-    "last_ago_h": 29,
+    "last_ago_h": 30,
     "max_pct": 43,
     "ripe": true
    },
    "buys": {
     "count": 4,
-    "last_ago_h": 18,
+    "last_ago_h": 19,
     "max_x": 9.4
-   }
-  },
-  {
-   "coin": "GUA",
-   "venue": "Binance",
-   "fapr": 30,
-   "funding_pct": 0.027,
-   "next_funding_h": 1.7,
-   "mark": 0.03919,
-   "chg24": -3.3,
-   "vol_usd": 1767566,
-   "lean": "—",
-   "strength": 29.850795,
-   "oi_usd": 4658665,
-   "oi_jump_pct": 0,
-   "vynos": {
-    "count": 1,
-    "last_ago_h": 29,
-    "max_pct": 34,
-    "ripe": true
-   },
-   "buys": {
-    "count": 3,
-    "last_ago_h": 5,
-    "max_x": 15.5
-   }
-  },
-  {
-   "coin": "CYS",
-   "venue": "Binance",
-   "fapr": 28,
-   "funding_pct": 0.026,
-   "next_funding_h": 1.7,
-   "mark": 0.5874,
-   "chg24": 13.3,
-   "vol_usd": 26874261,
-   "lean": "—",
-   "strength": 28.359405000000002,
-   "oi_usd": 9883262,
-   "oi_jump_pct": 1,
-   "vynos": {
-    "count": 1,
-    "last_ago_h": 29,
-    "max_pct": 12,
-    "ripe": true
-   },
-   "buys": {
-    "count": 6,
-    "last_ago_h": 1,
-    "max_x": 7.7
-   }
-  },
-  {
-   "coin": "JCT",
-   "venue": "Binance",
-   "fapr": 28,
-   "funding_pct": 0.026,
-   "next_funding_h": 1.7,
-   "mark": 0.00202089,
-   "chg24": -0.2,
-   "vol_usd": 2919928,
-   "lean": "—",
-   "strength": 28.33641,
-   "oi_usd": 5269173,
-   "oi_jump_pct": 0,
-   "vynos": {
-    "count": 4,
-    "last_ago_h": 21,
-    "max_pct": 26,
-    "ripe": true
-   },
-   "buys": {
-    "count": 7,
-    "last_ago_h": 21,
-    "max_x": 8.3
-   }
-  },
-  {
-   "coin": "M",
-   "venue": "Binance",
-   "fapr": 28,
-   "funding_pct": 0.026,
-   "next_funding_h": 1.7,
-   "mark": 1.10125824,
-   "chg24": -0.9,
-   "vol_usd": 1098873,
-   "lean": "—",
-   "strength": 28.322175000000005,
-   "oi_usd": 4717211,
-   "oi_jump_pct": 0,
-   "vynos": {
-    "count": 1,
-    "last_ago_h": 29,
-    "max_pct": 17,
-    "ripe": true
-   },
-   "buys": {
-    "count": 4,
-    "last_ago_h": 25,
-    "max_x": 13.2
    }
   },
   {
    "coin": "BR",
    "venue": "Binance",
-   "fapr": 28,
-   "funding_pct": 0.026,
-   "next_funding_h": 1.7,
-   "mark": 0.23759,
-   "chg24": 0.7,
-   "vol_usd": 3985391,
+   "fapr": 32,
+   "funding_pct": 0.03,
+   "next_funding_h": 1.5,
+   "mark": 0.23855,
+   "chg24": 0.1,
+   "vol_usd": 3947511,
    "lean": "—",
-   "strength": 28.2072,
-   "oi_usd": 8681308,
+   "strength": 32.33973,
+   "oi_usd": 8715039,
    "oi_jump_pct": 0,
    "vynos": {
     "count": 1,
-    "last_ago_h": 29,
+    "last_ago_h": 30,
     "max_pct": 18,
     "ripe": true
    },
    "buys": {
     "count": 3,
-    "last_ago_h": 29,
+    "last_ago_h": 30,
     "max_x": 5.6
    }
   },
   {
-   "coin": "BTW",
+   "coin": "GUA",
    "venue": "Binance",
-   "fapr": 25,
-   "funding_pct": 0.023,
-   "next_funding_h": 1.7,
-   "mark": 0.43503,
-   "chg24": -7.8,
-   "vol_usd": 78538638,
+   "fapr": 29,
+   "funding_pct": 0.027,
+   "next_funding_h": 1.5,
+   "mark": 0.03914,
+   "chg24": -2.5,
+   "vol_usd": 1702722,
    "lean": "—",
-   "strength": 25.034985,
-   "oi_usd": 90117680,
-   "oi_jump_pct": -1,
+   "strength": 29.077724999999994,
+   "oi_usd": 4653164,
+   "oi_jump_pct": 0,
    "vynos": {
-    "count": 2,
-    "last_ago_h": 23,
-    "max_pct": 17,
+    "count": 1,
+    "last_ago_h": 30,
+    "max_pct": 34,
     "ripe": true
    },
    "buys": {
     "count": 3,
-    "last_ago_h": 23,
-    "max_x": 5.6
+    "last_ago_h": 6,
+    "max_x": 15.5
    }
   },
   {
    "coin": "PRL",
    "venue": "Binance",
-   "fapr": -25,
-   "funding_pct": -0.023,
-   "next_funding_h": 1.7,
-   "mark": 0.22265146,
-   "chg24": -1.5,
-   "vol_usd": 6071206,
+   "fapr": -27,
+   "funding_pct": -0.025,
+   "next_funding_h": 1.5,
+   "mark": 0.2228,
+   "chg24": -1.0,
+   "vol_usd": 5794395,
    "lean": "—",
-   "strength": 25.030605,
-   "oi_usd": 3343996,
-   "oi_jump_pct": null,
+   "strength": 27.352005000000002,
+   "oi_usd": 3347685,
+   "oi_jump_pct": 0,
    "vynos": {
     "count": 1,
-    "last_ago_h": 29,
+    "last_ago_h": 30,
     "max_pct": 27,
     "ripe": true
    },
    "buys": {
     "count": 3,
-    "last_ago_h": 29,
+    "last_ago_h": 30,
     "max_x": 7.5
+   }
+  },
+  {
+   "coin": "AKE",
+   "venue": "Binance",
+   "fapr": 27,
+   "funding_pct": 0.025,
+   "next_funding_h": 1.5,
+   "mark": 0.00876883,
+   "chg24": 0.9,
+   "vol_usd": 33203150,
+   "lean": "—",
+   "strength": 27.205275,
+   "oi_usd": 31449665,
+   "oi_jump_pct": null,
+   "vynos": {
+    "count": 1,
+    "last_ago_h": 30,
+    "max_pct": 21,
+    "ripe": true
+   },
+   "buys": {
+    "count": 2,
+    "last_ago_h": 29,
+    "max_x": 10.7
+   }
+  },
+  {
+   "coin": "CYS",
+   "venue": "Binance",
+   "fapr": 26,
+   "funding_pct": 0.023,
+   "next_funding_h": 1.5,
+   "mark": 0.58514475,
+   "chg24": 13.9,
+   "vol_usd": 27409011,
+   "lean": "—",
+   "strength": 25.505834999999998,
+   "oi_usd": 9818360,
+   "oi_jump_pct": -1,
+   "vynos": {
+    "count": 1,
+    "last_ago_h": 30,
+    "max_pct": 12,
+    "ripe": true
+   },
+   "buys": {
+    "count": 6,
+    "last_ago_h": 2,
+    "max_x": 7.5
+   }
+  },
+  {
+   "coin": "M",
+   "venue": "Binance",
+   "fapr": 25,
+   "funding_pct": 0.023,
+   "next_funding_h": 1.5,
+   "mark": 1.10614517,
+   "chg24": -0.4,
+   "vol_usd": 1067519,
+   "lean": "—",
+   "strength": 25.304355,
+   "oi_usd": 4741503,
+   "oi_jump_pct": 1,
+   "vynos": {
+    "count": 1,
+    "last_ago_h": 30,
+    "max_pct": 17,
+    "ripe": true
+   },
+   "buys": {
+    "count": 4,
+    "last_ago_h": 26,
+    "max_x": 13.2
    }
   },
   {
@@ -357,24 +332,49 @@
    "venue": "Binance",
    "fapr": 25,
    "funding_pct": 0.023,
-   "next_funding_h": 1.7,
-   "mark": 0.02207018,
-   "chg24": 9.3,
-   "vol_usd": 5997576,
+   "next_funding_h": 1.5,
+   "mark": 0.02191245,
+   "chg24": 7.9,
+   "vol_usd": 6204637,
    "lean": "—",
-   "strength": 24.726195,
-   "oi_usd": 3698705,
-   "oi_jump_pct": null,
+   "strength": 25.29888,
+   "oi_usd": 3635687,
+   "oi_jump_pct": -2,
    "vynos": {
     "count": 1,
-    "last_ago_h": 29,
+    "last_ago_h": 30,
     "max_pct": 49,
     "ripe": true
    },
    "buys": {
-    "count": 3,
+    "count": 4,
     "last_ago_h": 1,
     "max_x": 13.3
+   }
+  },
+  {
+   "coin": "BTW",
+   "venue": "Binance",
+   "fapr": 24,
+   "funding_pct": 0.022,
+   "next_funding_h": 1.5,
+   "mark": 0.43364439,
+   "chg24": -11.0,
+   "vol_usd": 76854998,
+   "lean": "—",
+   "strength": 23.981595000000002,
+   "oi_usd": 89815237,
+   "oi_jump_pct": 0,
+   "vynos": {
+    "count": 2,
+    "last_ago_h": 24,
+    "max_pct": 17,
+    "ripe": true
+   },
+   "buys": {
+    "count": 3,
+    "last_ago_h": 24,
+    "max_x": 5.6
    }
   }
  ]
